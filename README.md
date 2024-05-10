@@ -1,6 +1,6 @@
 **PROJETO "CORONAVÍRUS - CUIDE-SE!"**
 
-<p>Com base na Inteligência Artificial Geral, criei esse simples projeto informativo acerca da COVID-19.</p>
+<p>Com base na Inteligência Artificial Geral, criei esse simples ChatBot informativo acerca da COVID-19.</p>
 
 <p>Apresentando fácil acesso ao usuário, tal protótipo demonstra bastante agilidade e confiabilidade. Claro, na medida do possível! Eis um convite a um "polêmico bate-papo" - quem sabe?!</p>
 
