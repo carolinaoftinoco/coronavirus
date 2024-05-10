@@ -9,6 +9,8 @@
 - Jupyter
 <br>
 
+![coronavirus_gif](https://github.com/carolinaoftinoco/coronavirus_gif/blob/main/coronavirus_gif.gif)
+
 
 
 
