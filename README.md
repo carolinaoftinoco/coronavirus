@@ -1,4 +1,4 @@
-**PROJETO CORONAVÍRUS - CUIDE-SE!**
+**PROJETO "CORONAVÍRUS - CUIDE-SE!"**
 
 <p>Com base na Inteligência Artificial Geral, criei esse simples projeto informativo acerca da COVID-19.</p>
 
