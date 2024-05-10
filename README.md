@@ -11,6 +11,7 @@
 
 ![coronavirus_gif](https://github.com/carolinaoftinoco/coronavirus_gif/main/coronavirus_gif.gif)
 
+<br>
 
-
+<p>P.S.: Obviamente suprimi alguns dados sensíveis, como a minha chave API dos registros disponíveis. (: </p>
 
