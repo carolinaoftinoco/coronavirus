@@ -13,5 +13,5 @@
 <br>
 
 <p>P.S.: Obviamente suprimi alguns dados sensíveis, como a minha chave API dos registros disponíveis. (: </p>
-<p>P.S.2: Este não é um projeto Web. Portanto, meus caros, para que interajam com o sistema, cliquem no arquivo cuja extensão é .ipynb. Espero ter contribuído com o conhecimento de todos(as)!</p>
+<p>P.S.2: Este não é um projeto Web e totalmente interativo ainda. Portanto, meus caros e minhas caras, esta versão é um "Frank" para que o "Enstein" seja desenvolvido com mais rigor. Espero que compreendam e me deem forças para prosseguir! Obrigada!</p>
 
