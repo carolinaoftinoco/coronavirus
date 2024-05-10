@@ -1,0 +1,188 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": " "
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": null,
+      "metadata": {
+        "id": "Y5qqsAufM_pv"
+      },
+      "outputs": [],
+      "source": [
+        "!pip install -q -U google-generativeai"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import google.generativeai as genai\n",
+        "\n",
+        "GOOGLE_API_KEY=\" \"\n",
+        "genai.configure(api_key=GOOGLE_API_KEY)"
+      ],
+      "metadata": {
+        "id": "NBE1f9mzNcbZ"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "for m in genai.list_models():\n",
+        "  if 'generateContent' in m.supported_generation_methods:\n",
+        "    print(m.name)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 138
+        },
+        "id": "Wd2w1GvzN4ps",
+        "executionInfo": {
+          "status": "ok",
+          "timestamp": 1715306230954,
+          "user_tz": 180,
+          "elapsed": 2322,
+          "user": {
+            "displayName": "Carolina Tinoco",
+            "userId": "15402824115840150114"
+          }
+        },
+        "outputId": "75e0ceaf-7f37-4e18-c763-0de8eb04d054"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "models/gemini-1.0-pro\n",
+            "models/gemini-1.0-pro-001\n",
+            "models/gemini-1.0-pro-latest\n",
+            "models/gemini-1.0-pro-vision-latest\n",
+            "models/gemini-1.5-pro-latest\n",
+            "models/gemini-pro\n",
+            "models/gemini-pro-vision\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "generation_config = {\n",
+        "  \"candidate_count\": 1,\n",
+        "  \"temperature\": 0.5,\n",
+        "}"
+      ],
+      "metadata": {
+        "id": "YIQInOyYOGGf"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "safety_settings= {\n",
+        "    'HATE': 'BLOCK_NONE',\n",
+        "    'HARASSMENT': 'BLOCK_NONE',\n",
+        "    'SEXUAL': 'BLOCK_NONE',\n",
+        "    'DANGEROUS': 'BLOCK_NONE'\n",
+        "    }"
+      ],
+      "metadata": {
+        "id": "BGHvXQ1OOTia"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "model = genai.GenerativeModel(model_name='gemini-1.0-pro',\n",
+        "                                  generation_config=generation_config,\n",
+        "                                  safety_settings=safety_settings,)"
+      ],
+      "metadata": {
+        "id": "Z5EyeG98OaXY"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "response = model.generate_content(\"Quantas pessoas no mundo foram contaminadas pelo coronavírus até o ano de 2023?\")\n",
+        "response.text"
+      ],
+      "metadata": {
+        "id": "jZSWBWMlOsnX",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "executionInfo": {
+          "status": "ok",
+          "timestamp": 1715309533674,
+          "user_tz": 180,
+          "elapsed": 3891,
+          "user": {
+            "displayName": "Carolina Tinoco",
+            "userId": "15402824115840150114"
+          }
+        },
+        "outputId": "4928b67a-7fea-4177-e4af-cac73288399a"
+      },
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'Até 31 de dezembro de 2022, o número total de casos confirmados de COVID-19 no mundo era de aproximadamente 755 milhões.'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 24
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "chat = model.start_chat(history=[])\n",
+        "\n",
+        "prompt = input('Esperando prompt: ')\n",
+        "\n",
+        "while prompt != \"fim\":\n",
+        "  response = chat.send_message(prompt)\n",
+        "  print(\"Resposta:\", response.text, '\\n\\n')\n",
+        "  prompt = input('Esperando prompt: ')"
+      ],
+      "metadata": {
+        "id": "p7mO3FN9THEm"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
