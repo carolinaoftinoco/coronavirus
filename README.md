@@ -12,6 +12,6 @@
   
 <br>
 
-<p>P.S.: Obviamente suprimi alguns dados sensíveis, como a minha chave API dos registros disponíveis.</p>
-<p>P.S.2.: Este não é um projeto Web e totalmente interativo ainda. Portanto, meus caros e minhas caras, esta versão é um "Frank" para que o "Enstein" seja desenvolvido com mais rigor (e vice-versa). Espero que compreendam e me deem forças para prosseguir! Obrigada!</p>
+<p>P.S.: Suprimi a minha chave API dos registros disponíveis a título de segurança e privacidade.</p>
+<p>P.S.2.: Este não é um projeto Web e totalmente interativo ainda. Portanto, meus caros e minhas caras, esta versão é um "Frank" para que o "Enstein" seja desenvolvido com mais rigor (e vice-versa). Espero que compreendam! Obrigada!</p>
 
